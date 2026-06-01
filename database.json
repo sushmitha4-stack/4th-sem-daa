@@ -1,0 +1,260 @@
+{
+  "emergencies": [
+    {
+      "id": 101,
+      "type": "Cardiac Arrest",
+      "severity": "Critical",
+      "status": "Resolved",
+      "nodeId": 0,
+      "timestamp": "2026-06-01T10:41:00.855Z",
+      "assignedAmbulanceId": 0,
+      "assignedHospitalId": 0,
+      "priority": 9.8,
+      "responseTime": 8.5
+    },
+    {
+      "id": 102,
+      "type": "Highway Collision",
+      "severity": "Critical",
+      "status": "Resolved",
+      "nodeId": 7,
+      "timestamp": "2026-06-01T11:41:00.856Z",
+      "assignedAmbulanceId": 3,
+      "assignedHospitalId": 2,
+      "priority": 9.5,
+      "responseTime": 23.8
+    },
+    {
+      "id": 103,
+      "type": "Warehouse Fire",
+      "severity": "High",
+      "status": "Resolved",
+      "nodeId": 4,
+      "timestamp": "2026-06-01T11:41:00.856Z",
+      "assignedAmbulanceId": 2,
+      "assignedHospitalId": 1,
+      "priority": 7.6,
+      "responseTime": 14.9
+    },
+    {
+      "id": 1780314445502,
+      "timestamp": "2026-06-01T11:47:25.498Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 0,
+      "assignedHospitalId": 0,
+      "type": "General Medical Emergency",
+      "severity": "Low",
+      "nodeId": 0,
+      "priority": 2.5,
+      "responseTime": 7.3
+    },
+    {
+      "id": 1780314760691,
+      "timestamp": "2026-06-01T11:52:40.687Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 0,
+      "assignedHospitalId": 0,
+      "type": "Factory Fire",
+      "severity": "Critical",
+      "nodeId": 0,
+      "priority": 10.5,
+      "responseTime": 11.3
+    },
+    {
+      "id": 1780315657507,
+      "timestamp": "2026-06-01T12:07:37.503Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 0,
+      "assignedHospitalId": 0,
+      "type": "Factory Fire",
+      "severity": "Critical",
+      "nodeId": 0,
+      "priority": 10.3,
+      "responseTime": 6.7
+    },
+    {
+      "id": 1780315720894,
+      "timestamp": "2026-06-01T12:08:40.890Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 0,
+      "assignedHospitalId": 0,
+      "type": "General Medical Emergency",
+      "severity": "Critical",
+      "nodeId": 0,
+      "priority": 10.1,
+      "responseTime": 348.4
+    },
+    {
+      "id": 1780315729074,
+      "timestamp": "2026-06-01T12:08:49.070Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 4,
+      "assignedHospitalId": 0,
+      "type": "Factory Fire",
+      "severity": "High",
+      "nodeId": 0,
+      "priority": 7.7,
+      "responseTime": 357.4
+    },
+    {
+      "id": 1780336688514,
+      "timestamp": "2026-06-01T17:58:08.510Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 0,
+      "assignedHospitalId": 0,
+      "type": "Building Collapse",
+      "severity": "Critical",
+      "nodeId": 0,
+      "priority": 10,
+      "responseTime": 7.9
+    }
+  ],
+  "ambulances": [
+    {
+      "id": 0,
+      "name": "Rescuer-A1 (ALS)",
+      "type": "ALS",
+      "status": "Idle",
+      "currentNode": 0,
+      "targetNode": null,
+      "speed": 50,
+      "battery": 58
+    },
+    {
+      "id": 1,
+      "name": "Rescuer-B2 (BLS)",
+      "type": "BLS",
+      "status": "Idle",
+      "currentNode": 1,
+      "targetNode": null,
+      "speed": 45,
+      "battery": 100
+    },
+    {
+      "id": 2,
+      "name": "Rescuer-A3 (ALS)",
+      "type": "ALS",
+      "status": "Idle",
+      "currentNode": 5,
+      "targetNode": null,
+      "speed": 55,
+      "battery": 77
+    },
+    {
+      "id": 3,
+      "name": "Rescuer-B4 (BLS)",
+      "type": "BLS",
+      "status": "Idle",
+      "currentNode": 6,
+      "targetNode": null,
+      "speed": 40,
+      "battery": 84
+    },
+    {
+      "id": 4,
+      "name": "Rescuer-B5 (BLS)",
+      "type": "BLS",
+      "status": "Idle",
+      "currentNode": 0,
+      "targetNode": null,
+      "speed": 42,
+      "battery": 70
+    }
+  ],
+  "hospitals": [
+    {
+      "id": 0,
+      "name": "RVCE Medical Health Center",
+      "nodeId": 0,
+      "icuBedsMax": 10,
+      "icuBedsAvailable": 2,
+      "coordinates": {
+        "x": 150,
+        "y": 480
+      }
+    },
+    {
+      "id": 1,
+      "name": "Narayana Health HSR",
+      "nodeId": 5,
+      "icuBedsMax": 50,
+      "icuBedsAvailable": 11,
+      "coordinates": {
+        "x": 580,
+        "y": 480
+      }
+    },
+    {
+      "id": 2,
+      "name": "Manipal Hospital Whitefield",
+      "nodeId": 6,
+      "icuBedsMax": 100,
+      "icuBedsAvailable": 24,
+      "coordinates": {
+        "x": 880,
+        "y": 280
+      }
+    },
+    {
+      "id": 3,
+      "name": "Columbia Asia Hebbal",
+      "nodeId": 3,
+      "icuBedsMax": 60,
+      "icuBedsAvailable": 15,
+      "coordinates": {
+        "x": 500,
+        "y": 100
+      }
+    },
+    {
+      "id": 4,
+      "name": "Fortis Hospital Jayanagar",
+      "nodeId": 8,
+      "icuBedsMax": 40,
+      "icuBedsAvailable": 6,
+      "coordinates": {
+        "x": 420,
+        "y": 520
+      }
+    },
+    {
+      "id": 5,
+      "name": "Bowring & Lady Curzon Hospital",
+      "nodeId": 1,
+      "icuBedsMax": 80,
+      "icuBedsAvailable": 4,
+      "coordinates": {
+        "x": 400,
+        "y": 320
+      }
+    }
+  ],
+  "blockedEdges": [
+    {
+      "source": 0,
+      "target": 4
+    },
+    {
+      "source": 0,
+      "target": 6
+    },
+    {
+      "source": 0,
+      "target": 7
+    },
+    {
+      "source": 0,
+      "target": 9
+    }
+  ],
+  "trafficMultipliers": {
+    "0-6": 2.5,
+    "0-1": 3.5,
+    "1-8": 3.5
+  },
+  "settings": {
+    "trafficWeight": 1.5,
+    "dispatchAlgorithm": "Hungarian",
+    "maxResponseTimer": 15
+  }
+}
