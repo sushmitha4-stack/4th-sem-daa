@@ -1,94 +1,52 @@
 <<<<<<< HEAD
-# Aegis Command - AI Smart Emergency Routing & Resource Allocation Platform
+# Aegis Command — AI Emergency Routing Platform
 
-Aegis Command is an enterprise-grade, startup-style intelligent operations platform designed to optimize emergency dispatching, routing, resource pairing, and network resilience. Using classical Design and Analysis of Algorithms (DAA) concepts, it simulates and manages emergency logistics in Bangalore.
+Aegis Command is a React + Express project for simulating emergency dispatch, route optimization, and resource allocation. The repository is split into two main services:
 
----
+- `frontend/` — React app for the dashboard and user interface
+- `backend/` — Express API for dispatch logic and algorithm processing
 
-## 🚀 Key Features
+## ✅ What changed
+I reorganized the docs to make the project easier to understand and use.
 
-1. **Autonomous Emergency Dashboard**: Monitors active alerts, hospital loads, standby ambulances, and displays live telemetry tickers.
-2. **Dynamic Route Optimization**: Dijkstra-based real-time path calculations with interactive congestion parameters.
-3. **Hungarian Bipartite Allocator**: A Kuhn-Munkres matching matrix interface pairing calls with ambulances to minimize global travel cost.
-4. **Disaster Management Containment**: DFS connectivity analysis to flag isolated zones, and BFS level-order diagnostics.
-5. **Prim's Spanning Network**: Spans a minimum communication fiber line connecting all active hubs with minimal cost.
-6. **Telemetry Analytics**: Recharts-based telemetry charts tracking response times, fuel saved, and algorithm speeds.
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React.js (Vite), Tailwind CSS, Lucide Icons, Recharts, SVG Vector GIS Map.
-- **Backend**: Node.js, Express.js.
-- **Database**: MongoDB (Mongoose) with a built-in local JSON file persistence fallback if MongoDB is offline.
-
----
-
-## 🧬 DAA Algorithms Integration
-
-| Algorithm | Role in Aegis | Complexity |
-| :--- | :--- | :--- |
-| **Dijkstra's Algorithm** | Real-time traffic-aware routing from ambulance to patient, then to hospital. | $O(E \log V)$ |
-| **Floyd-Warshall** | Precomputes all-pairs shortest paths for instant $O(1)$ dispatch lookups. | $O(V^3)$ |
-| **Hungarian Algorithm** | Bipartite matching optimization of pending calls to standby vehicles. | $O(V^3)$ |
-| **Travelling Salesman (TSP)** | Dynamic Programming multi-stop path planning for delivery trucks. | $O(2^N N^2)$ |
-| **Prim's Algorithm** | Builds a Minimum Spanning Tree communications backup network. | $O(V^2)$ |
-| **BFS & DFS** | Connectivity scan to isolate cut-off sectors (DFS) and log hop-distances (BFS). | $O(V + E)$ |
-
----
-
-## 📂 Folder Structure
-
-```
-├── backend/
-│   ├── src/
-│   │   ├── config/          # DB setup
-│   │   ├── controllers/     # API handlers
-│   │   ├── models/          # Repositories
-│   │   ├── routes/          # Express routes
-│   │   ├── utils/           # DAA Algorithms
-│   │   └── server.js        # Server entry
-│   ├── package.json
-│   └── database.json        # Fallback database
-├── frontend/
-│   ├── src/
-│   │   ├── components/      # UI components
-│   │   ├── utils/           # Helper scripts
-│   │   ├── App.jsx          # UI root
-│   │   ├── main.jsx         # Bootloader
-│   │   └── index.css        # Styles & animations
-│   ├── package.json
-│   ├── tailwind.config.js
-│   ├── index.html
-│   └── vite.config.js
-├── start-platform.bat       # One-click Windows launcher
-└── README.md
-```
-
----
-
-## ⚡ Quick Start Instructions
-
-### Prerequisites
-- Node.js (v16.x or higher)
-- npm (v7.x or higher)
-- *Optional*: MongoDB (connected automatically if running locally)
-
-### Installation
-1. Open a terminal in the root directory.
-2. Install all dependencies for both directories:
+## 🚀 Quick Start
+1. Open a terminal in the project root.
+2. Install dependencies for root, backend, and frontend:
    ```bash
    npm run install-all
    ```
-
-### Running Locally
-- **Windows**: Double-click `start-platform.bat` at the root of the project.
-- **Other OS**: Run the following command in the root terminal:
+3. Start both services:
    ```bash
-   npm run dev
+   npm start
    ```
+4. Open the app in the browser:
+   - Frontend: `http://localhost:3000`
+   - Backend API: `http://localhost:5000`
 
-The application will launch on:
-- **Frontend**: [http://localhost:3000](http://localhost:3000)
-- **Backend API**: [http://localhost:5000](http://localhost:5000)
+## 📦 Folder structure
+- `backend/` — Express server, route controllers, algorithm utilities
+- `frontend/` — Vite + React app, UI components, styles
+- `database.json` — local JSON fallback data store
+- `start-platform.bat` — Windows shortcut to launch the app
+- `package.json` — root scripts for installing and running the project
+- `.gitignore` — clean repo ignores node_modules and temp files
+
+## 🛠️ Main commands
+- `npm run install-all` — install root, backend, and frontend dependencies
+- `npm run dev` — start backend and frontend together
+- `npm start` — same as `npm run dev`
+- `npm run backend` — run only the backend server
+- `npm run frontend` — run only the frontend app
+
+## 🔧 Where to work
+- Change API behavior in `backend/src/routes` and `backend/src/controllers`
+- Update algorithms in `backend/src/utils`
+- Edit UI screens in `frontend/src/components`
+- Configure styling in `frontend/src/index.css` and `frontend/tailwind.config.js`
+
+## 💡 Notes
+- Root package handles running both services together.
+- Backend uses `nodemon` for automatic restarts during development.
+- Frontend is powered by Vite for fast refresh.
+- Keep the main app entry points in `frontend/src/main.jsx` and `backend/src/server.js`.
 
