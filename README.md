@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Aegis Command - AI Smart Emergency Routing & Resource Allocation Platform
 
 Aegis Command is an enterprise-grade, startup-style intelligent operations platform designed to optimize emergency dispatching, routing, resource pairing, and network resilience. Using classical Design and Analysis of Algorithms (DAA) concepts, it simulates and manages emergency logistics in Bangalore.
@@ -90,3 +91,4 @@ Aegis Command is an enterprise-grade, startup-style intelligent operations platf
 The application will launch on:
 - **Frontend**: [http://localhost:3000](http://localhost:3000)
 - **Backend API**: [http://localhost:5000](http://localhost:5000)
+
