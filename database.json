@@ -1,0 +1,220 @@
+{
+  "emergencies": [
+    {
+      "id": 101,
+      "type": "Cardiac Arrest",
+      "severity": "Critical",
+      "status": "Resolved",
+      "nodeId": 0,
+      "timestamp": "2026-06-02T04:32:43.151Z",
+      "assignedAmbulanceId": 0,
+      "assignedHospitalId": 0,
+      "priority": 9.8,
+      "responseTime": 8.5
+    },
+    {
+      "id": 102,
+      "type": "Highway Collision",
+      "severity": "Critical",
+      "status": "Resolved",
+      "nodeId": 7,
+      "timestamp": "2026-06-02T05:32:43.152Z",
+      "assignedAmbulanceId": 3,
+      "assignedHospitalId": 2,
+      "priority": 9.5,
+      "responseTime": 18.9
+    },
+    {
+      "id": 103,
+      "type": "Warehouse Fire",
+      "severity": "High",
+      "status": "Pending",
+      "nodeId": 4,
+      "timestamp": "2026-06-02T05:32:43.152Z",
+      "assignedAmbulanceId": null,
+      "assignedHospitalId": null,
+      "priority": 7.6,
+      "responseTime": null
+    },
+    {
+      "id": 1780379227733,
+      "timestamp": "2026-06-02T05:47:07.729Z",
+      "status": "En-Route",
+      "assignedAmbulanceId": 3,
+      "assignedHospitalId": 1,
+      "type": "Collapse",
+      "severity": "High",
+      "nodeId": 9,
+      "name": "alnire",
+      "phone": "9220",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 7.6,
+      "ambulanceRoute": [
+        6,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 22,
+      "hospitalDistance": 15
+    },
+    {
+      "id": 1780379232704,
+      "timestamp": "2026-06-02T05:47:12.697Z",
+      "status": "En-Route",
+      "assignedAmbulanceId": 4,
+      "assignedHospitalId": 1,
+      "type": "Collapse",
+      "severity": "High",
+      "nodeId": 9,
+      "name": "alnire",
+      "phone": "9220",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 7.9,
+      "ambulanceRoute": [
+        8,
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 21,
+      "hospitalDistance": 15
+    }
+  ],
+  "ambulances": [
+    {
+      "id": 0,
+      "name": "Rescuer-A1 (ALS)",
+      "type": "ALS",
+      "status": "Idle",
+      "currentNode": 0,
+      "targetNode": null,
+      "speed": 50,
+      "battery": 98
+    },
+    {
+      "id": 1,
+      "name": "Rescuer-B2 (BLS)",
+      "type": "BLS",
+      "status": "Idle",
+      "currentNode": 1,
+      "targetNode": null,
+      "speed": 45,
+      "battery": 100
+    },
+    {
+      "id": 2,
+      "name": "Rescuer-A3 (ALS)",
+      "type": "ALS",
+      "status": "Idle",
+      "currentNode": 3,
+      "targetNode": null,
+      "speed": 55,
+      "battery": 85
+    },
+    {
+      "id": 3,
+      "name": "Rescuer-B4 (BLS)",
+      "type": "BLS",
+      "status": "En-Route",
+      "currentNode": 6,
+      "targetNode": 9,
+      "speed": 40,
+      "battery": 84
+    },
+    {
+      "id": 4,
+      "name": "Rescuer-B5 (BLS)",
+      "type": "BLS",
+      "status": "En-Route",
+      "currentNode": 8,
+      "targetNode": 9,
+      "speed": 42,
+      "battery": 78
+    }
+  ],
+  "hospitals": [
+    {
+      "id": 0,
+      "name": "RVCE Medical Health Center",
+      "nodeId": 0,
+      "icuBedsMax": 10,
+      "icuBedsAvailable": 8,
+      "coordinates": {
+        "x": 150,
+        "y": 480
+      }
+    },
+    {
+      "id": 1,
+      "name": "Narayana Health HSR",
+      "nodeId": 5,
+      "icuBedsMax": 50,
+      "icuBedsAvailable": 10,
+      "coordinates": {
+        "x": 580,
+        "y": 480
+      }
+    },
+    {
+      "id": 2,
+      "name": "Manipal Hospital Whitefield",
+      "nodeId": 6,
+      "icuBedsMax": 100,
+      "icuBedsAvailable": 24,
+      "coordinates": {
+        "x": 880,
+        "y": 280
+      }
+    },
+    {
+      "id": 3,
+      "name": "Columbia Asia Hebbal",
+      "nodeId": 3,
+      "icuBedsMax": 60,
+      "icuBedsAvailable": 15,
+      "coordinates": {
+        "x": 500,
+        "y": 100
+      }
+    },
+    {
+      "id": 4,
+      "name": "Fortis Hospital Jayanagar",
+      "nodeId": 8,
+      "icuBedsMax": 40,
+      "icuBedsAvailable": 6,
+      "coordinates": {
+        "x": 420,
+        "y": 520
+      }
+    },
+    {
+      "id": 5,
+      "name": "Bowring & Lady Curzon Hospital",
+      "nodeId": 1,
+      "icuBedsMax": 80,
+      "icuBedsAvailable": 4,
+      "coordinates": {
+        "x": 400,
+        "y": 320
+      }
+    }
+  ],
+  "blockedEdges": [],
+  "trafficMultipliers": {},
+  "settings": {
+    "trafficWeight": 1.5,
+    "dispatchAlgorithm": "Hungarian",
+    "maxResponseTimer": 15
+  }
+}
