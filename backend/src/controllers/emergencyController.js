@@ -1,5 +1,6 @@
 import Repository from '../models/dataRepository.js';
 import { runFloydWarshall } from '../utils/floydWarshall.js';
+import { runDijkstra } from "../utils/dijkstra.js";
 import { EDGES, getAdjacencyList, NODES } from '../utils/cityGraph.js';
 
 export const emergencyController = {
@@ -16,7 +17,16 @@ export const emergencyController = {
   // Report a new emergency (with AI priority ranking and nearest ambulance assignment)
   async reportEmergency(req, res) {
     try {
-      const { type, severity, nodeId } = req.body;
+      const {
+  type,
+  severity,
+  nodeId,
+  name,
+  phone,
+  victims,
+  location,
+  notes
+} = req.body;
       if (!type || !severity || nodeId === undefined) {
         return res.status(400).json({ error: "Missing type, severity, or nodeId" });
       }
@@ -28,7 +38,10 @@ export const emergencyController = {
       else if (severity === "Medium") severityWeight = 5.0;
       else if (severity === "Low") severityWeight = 2.5;
 
-      const priority = Number((severityWeight + Math.random() * 0.5).toFixed(1));
+      const priority = Math.min(
+  Number((severityWeight + Math.random() * 0.5).toFixed(1)),
+  10
+);
 
       // 2. Fetch current resources
       const ambulances = await Repository.getAmbulances();
@@ -70,20 +83,66 @@ export const emergencyController = {
 
       // 3. Prepare emergency record
       const emergencyData = {
-        type,
-        severity,
-        nodeId: Number(nodeId),
-        priority,
-        status: "Pending",
-        assignedAmbulanceId: null,
-        assignedHospitalId: null,
-        timestamp: new Date().toISOString()
-      };
+  type,
+  severity,
+  nodeId: Number(nodeId),
+
+  // Citizen Details
+  name,
+  phone,
+  victims,
+  location,
+  notes,
+
+  // Emergency System Data
+  priority,
+  status: "Pending",
+  assignedAmbulanceId: null,
+  assignedHospitalId: null,
+  timestamp: new Date().toISOString()
+};
 
       if (bestAmbulance && bestHospital) {
+        console.log(
+  "AMBULANCE NODE:",
+  bestAmbulance.currentNode
+);
+
+console.log(
+  "EMERGENCY NODE:",
+  Number(nodeId)
+);
+
+console.log(
+  "HOSPITAL NODE:",
+  bestHospital.nodeId
+);
+        const ambulanceRoute = runDijkstra(
+         
+  adjList,
+  bestAmbulance.currentNode,
+  Number(nodeId),
+  NODES.length
+);
+console.log(
+  "AMBULANCE ROUTE:",
+  ambulanceRoute
+);
+
+const hospitalRoute = runDijkstra(
+  adjList,
+  Number(nodeId),
+  bestHospital.nodeId,
+  NODES.length
+);
         emergencyData.status = "En-Route";
         emergencyData.assignedAmbulanceId = bestAmbulance.id;
         emergencyData.assignedHospitalId = bestHospital.id;
+        emergencyData.ambulanceRoute = ambulanceRoute.path;
+emergencyData.hospitalRoute = hospitalRoute.path;
+
+emergencyData.ambulanceDistance = ambulanceRoute.distance;
+emergencyData.hospitalDistance = hospitalRoute.distance;
 
         // Dispatch ambulance
         await Repository.updateAmbulance(bestAmbulance.id, {

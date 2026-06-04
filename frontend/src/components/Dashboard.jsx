@@ -9,6 +9,7 @@ export default function Dashboard({
   ambulances = [], 
   hospitals = [],
   blockedEdges = [],
+  highlightedRoute = [],
   trafficMultipliers = {},
   onNavigateTo = null 
 }) {
@@ -76,6 +77,7 @@ export default function Dashboard({
     }
     return recs;
   };
+  console.log("ROUTE PASSED TO MAP:", highlightedRoute);
 
   return (
     <div className="space-y-6">
@@ -132,16 +134,19 @@ export default function Dashboard({
             <span className="text-[10px] text-emerald-400 font-mono flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-ping"></span> Live Simulation Stream
             </span>
+          
           </div>
-          <MapView 
-            nodes={nodes}
-            edges={edges}
-            emergencies={emergencies}
-            ambulances={ambulances}
-            hospitals={hospitals}
-            blockedEdges={blockedEdges}
-            trafficMultipliers={trafficMultipliers}
-          />
+          <MapView
+  nodes={nodes}
+  edges={edges}
+  emergencies={emergencies}
+  ambulances={ambulances}
+  hospitals={hospitals}
+  blockedEdges={blockedEdges}
+  trafficMultipliers={trafficMultipliers}
+  highlightPath={highlightedRoute}
+  highlightPathType="dijkstra"
+/>
         </div>
 
         {/* Right Panel: AI Insights & System Log */}

@@ -188,13 +188,49 @@ export default function EmergencyMonitor({
                     <h4 className="text-sm font-bold text-slate-200 uppercase tracking-wide">{e.type}</h4>
                     
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-[10px] text-slate-400 pt-1">
-                      <div>📍 Area: {locationNode ? locationNode.name : `Node ${e.nodeId}`}</div>
-                      <div>⏰ Registered: {new Date(e.timestamp).toLocaleTimeString()}</div>
-                      <div>🧬 AI Priority Score: <span className="text-cyan-400 font-bold">{e.priority} / 10</span></div>
-                      {e.status === "Resolved" && (
-                        <div className="text-emerald-400 font-semibold">⚡ Responded in: {e.responseTime} min</div>
-                      )}
-                    </div>
+  <div>
+  📍 Area: {e.location || (locationNode ? locationNode.name : `Node ${e.nodeId}`)}
+</div>
+
+  <div>
+    ⏰ Registered: {new Date(e.timestamp).toLocaleTimeString()}
+  </div>
+
+  <div>
+    🧬 AI Priority Score:
+    <span className="text-cyan-400 font-bold">
+      {" "}{e.priority} / 10
+    </span>
+  </div>
+
+  <div>
+    👤 Caller: {e.name || "Unknown"}
+  </div>
+
+  <div>
+    📞 Phone: {e.phone || "N/A"}
+  </div>
+
+  <div>
+    👥 Victims: {e.victims || "N/A"}
+  </div>
+
+  <div>
+    📍 Location: {e.location || "N/A"}
+  </div>
+
+  {e.notes && (
+    <div className="col-span-2">
+      📝 Notes: {e.notes}
+    </div>
+  )}
+
+  {e.status === "Resolved" && (
+    <div className="text-emerald-400 font-semibold">
+      ⚡ Responded in: {e.responseTime} min
+    </div>
+  )}
+</div>
 
                     {/* Resources Dispatched Block */}
                     {e.status === "En-Route" && (
@@ -203,6 +239,37 @@ export default function EmergencyMonitor({
                         <div>🏥 Dest: <strong className="text-white">{assignedHospital ? assignedHospital.name : 'Clinic'}</strong></div>
                       </div>
                     )}
+                    {e.ambulanceRoute && (
+  <div className="mt-2 p-2 border border-cyan-500/20 rounded">
+    🚑 Route:
+    {
+      e.ambulanceRoute
+        .map(id => {
+          const node = nodes.find(n => n.id === id);
+          return node ? node.name : id;
+        })
+        .join(" → ")
+    }
+  </div>
+)}
+{e.ambulanceDistance !== undefined && (
+  <div className="text-xs text-slate-400 mt-1">
+    Distance: {e.ambulanceDistance} km
+  </div>
+)}
+{e.hospitalRoute && (
+  <div className="mt-2 p-2 border border-emerald-500/20 rounded">
+    🏥 Hospital Route:
+    {
+      e.hospitalRoute
+        .map(id => {
+          const node = nodes.find(n => n.id === id);
+          return node ? node.name : id;
+        })
+        .join(" → ")
+    }
+  </div>
+)}
                   </div>
 
                   {/* Operational Override Buttons */}

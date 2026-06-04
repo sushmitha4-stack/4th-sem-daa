@@ -14,12 +14,14 @@ import HospitalAllocation from './components/HospitalAllocation.jsx';
 import DisasterResponse from './components/DisasterResponse.jsx';
 import Analytics from './components/Analytics.jsx';
 import Settings from './components/Settings.jsx';
+import CitizenHome from './components/CitizenHome.jsx';
+
 
 // Import Static Nodes/Edges representation
 import { NODES, EDGES } from './utils/cityGraph.js';
 
 export default function App() {
-  const [page, setPage] = useState('landing'); // 'landing', 'login', 'dashboard'
+  const [page, setPage] = useState('landing'); // 'landing', 'login', 'citizen', 'dashboard'
   const [subPage, setSubPage] = useState('overview'); // 'overview', 'emergencies', 'routing', 'allocation', 'disaster', 'analytics', 'settings'
   
   // Data States
@@ -167,16 +169,30 @@ export default function App() {
       console.error(e);
     }
   };
+  const activeEmergency = emergencies.find(
+  e => e.status === "En-Route" && e.ambulanceRoute
+);
+console.log("ACTIVE EMERGENCY:", activeEmergency);
+console.log("ACTIVE ROUTE:", activeEmergency?.ambulanceRoute);
 
   // Landing Page handler
   if (page === 'landing') {
-    return <LandingPage onEnter={() => setPage('login')} />;
-  }
+  return (
+    <LandingPage
+      onEnter={() => setPage('login')}
+      onCitizen={() => setPage('citizen')}
+    />
+  );
+}
 
   // Auth/Login page handler
   if (page === 'login') {
     return <Auth onLogin={() => setPage('dashboard')} />;
   }
+
+  if (page === 'citizen') {
+  return <CitizenHome />;
+}
 
   return (
     <div className="min-h-screen bg-slate-950 flex flex-col lg:flex-row text-slate-100 font-sans">
@@ -245,16 +261,17 @@ export default function App() {
         <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[150px] pointer-events-none"></div>
 
         {subPage === 'overview' && (
-          <Dashboard 
-            nodes={NODES}
-            edges={EDGES}
-            emergencies={emergencies}
-            ambulances={ambulances}
-            hospitals={hospitals}
-            blockedEdges={blockedEdges}
-            trafficMultipliers={trafficMultipliers}
-            onNavigateTo={setSubPage}
-          />
+          <Dashboard
+  nodes={NODES}
+  edges={EDGES}
+  emergencies={emergencies}
+  ambulances={ambulances}
+  hospitals={hospitals}
+  blockedEdges={blockedEdges}
+  trafficMultipliers={trafficMultipliers}
+  onNavigateTo={setSubPage}
+  highlightedRoute={activeEmergency?.ambulanceRoute || []}
+/>
         )}
         
         {subPage === 'emergencies' && (

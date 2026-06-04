@@ -6,7 +6,7 @@
       "severity": "Critical",
       "status": "Resolved",
       "nodeId": 0,
-      "timestamp": "2026-06-01T10:41:00.855Z",
+      "timestamp": "2026-06-02T04:32:43.151Z",
       "assignedAmbulanceId": 0,
       "assignedHospitalId": 0,
       "priority": 9.8,
@@ -18,95 +18,214 @@
       "severity": "Critical",
       "status": "Resolved",
       "nodeId": 7,
-      "timestamp": "2026-06-01T11:41:00.856Z",
+      "timestamp": "2026-06-02T05:32:43.152Z",
       "assignedAmbulanceId": 3,
       "assignedHospitalId": 2,
       "priority": 9.5,
-      "responseTime": 23.8
+      "responseTime": 18.9
     },
     {
       "id": 103,
       "type": "Warehouse Fire",
       "severity": "High",
-      "status": "Resolved",
+      "status": "Pending",
       "nodeId": 4,
-      "timestamp": "2026-06-01T11:41:00.856Z",
-      "assignedAmbulanceId": 2,
-      "assignedHospitalId": 1,
+      "timestamp": "2026-06-02T05:32:43.152Z",
+      "assignedAmbulanceId": null,
+      "assignedHospitalId": null,
       "priority": 7.6,
-      "responseTime": 14.9
+      "responseTime": null
     },
     {
-      "id": 1780314445502,
-      "timestamp": "2026-06-01T11:47:25.498Z",
+      "id": 1780379227733,
+      "timestamp": "2026-06-02T05:47:07.729Z",
       "status": "Resolved",
-      "assignedAmbulanceId": 0,
-      "assignedHospitalId": 0,
-      "type": "General Medical Emergency",
-      "severity": "Low",
-      "nodeId": 0,
-      "priority": 2.5,
-      "responseTime": 7.3
+      "assignedAmbulanceId": 3,
+      "assignedHospitalId": 1,
+      "type": "Collapse",
+      "severity": "High",
+      "nodeId": 9,
+      "name": "alnire",
+      "phone": "9220",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 7.6,
+      "ambulanceRoute": [
+        6,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 22,
+      "hospitalDistance": 15,
+      "responseTime": 109.5
     },
     {
-      "id": 1780314760691,
-      "timestamp": "2026-06-01T11:52:40.687Z",
-      "status": "Resolved",
-      "assignedAmbulanceId": 0,
-      "assignedHospitalId": 0,
-      "type": "Factory Fire",
-      "severity": "Critical",
-      "nodeId": 0,
-      "priority": 10.5,
-      "responseTime": 11.3
-    },
-    {
-      "id": 1780315657507,
-      "timestamp": "2026-06-01T12:07:37.503Z",
-      "status": "Resolved",
-      "assignedAmbulanceId": 0,
-      "assignedHospitalId": 0,
-      "type": "Factory Fire",
-      "severity": "Critical",
-      "nodeId": 0,
-      "priority": 10.3,
-      "responseTime": 6.7
-    },
-    {
-      "id": 1780315720894,
-      "timestamp": "2026-06-01T12:08:40.890Z",
-      "status": "Resolved",
-      "assignedAmbulanceId": 0,
-      "assignedHospitalId": 0,
-      "type": "General Medical Emergency",
-      "severity": "Critical",
-      "nodeId": 0,
-      "priority": 10.1,
-      "responseTime": 348.4
-    },
-    {
-      "id": 1780315729074,
-      "timestamp": "2026-06-01T12:08:49.070Z",
+      "id": 1780379232704,
+      "timestamp": "2026-06-02T05:47:12.697Z",
       "status": "Resolved",
       "assignedAmbulanceId": 4,
-      "assignedHospitalId": 0,
-      "type": "Factory Fire",
+      "assignedHospitalId": 1,
+      "type": "Collapse",
       "severity": "High",
-      "nodeId": 0,
-      "priority": 7.7,
-      "responseTime": 357.4
+      "nodeId": 9,
+      "name": "alnire",
+      "phone": "9220",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 7.9,
+      "ambulanceRoute": [
+        8,
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 21,
+      "hospitalDistance": 15,
+      "responseTime": 109.9
     },
     {
-      "id": 1780336688514,
-      "timestamp": "2026-06-01T17:58:08.510Z",
+      "id": 1780385454122,
+      "timestamp": "2026-06-02T07:30:54.111Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 3,
+      "assignedHospitalId": 1,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 9,
+      "name": "aliehjpw",
+      "phone": "20957",
+      "victims": "0",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 10,
+      "ambulanceRoute": [
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 15,
+      "hospitalDistance": 15,
+      "responseTime": 4.9
+    },
+    {
+      "id": 1780385462324,
+      "timestamp": "2026-06-02T07:31:02.316Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 4,
+      "assignedHospitalId": 1,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 9,
+      "name": "aliehjpw",
+      "phone": "20957",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 10,
+      "ambulanceRoute": [
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 15,
+      "hospitalDistance": 15,
+      "responseTime": 5.6
+    },
+    {
+      "id": 1780385464257,
+      "timestamp": "2026-06-02T07:31:04.250Z",
       "status": "Resolved",
       "assignedAmbulanceId": 0,
-      "assignedHospitalId": 0,
-      "type": "Building Collapse",
+      "assignedHospitalId": 1,
+      "type": "Medical",
       "severity": "Critical",
-      "nodeId": 0,
+      "nodeId": 9,
+      "name": "aliehjpw",
+      "phone": "20957",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "",
       "priority": 10,
-      "responseTime": 7.9
+      "ambulanceRoute": [
+        0,
+        8,
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 31,
+      "hospitalDistance": 15,
+      "responseTime": 6.3
+    },
+    {
+      "id": 1780385467502,
+      "timestamp": "2026-06-02T07:31:07.495Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 1,
+      "assignedHospitalId": 1,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 9,
+      "name": "aliehjpw",
+      "phone": "20957",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "swhrte",
+      "priority": 10,
+      "ambulanceRoute": [
+        1,
+        8,
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 29,
+      "hospitalDistance": 15,
+      "responseTime": 5.2
+    },
+    {
+      "id": 1780385949434,
+      "timestamp": "2026-06-02T07:39:09.428Z",
+      "status": "En-Route",
+      "assignedAmbulanceId": 2,
+      "assignedHospitalId": 3,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 3,
+      "name": "fljset",
+      "phone": "9843",
+      "victims": "1",
+      "location": "Hebbal",
+      "notes": "quick",
+      "priority": 10,
+      "ambulanceRoute": [
+        3
+      ],
+      "hospitalRoute": [
+        3
+      ],
+      "ambulanceDistance": 0,
+      "hospitalDistance": 0
     }
   ],
   "ambulances": [
@@ -115,50 +234,50 @@
       "name": "Rescuer-A1 (ALS)",
       "type": "ALS",
       "status": "Idle",
-      "currentNode": 0,
+      "currentNode": 5,
       "targetNode": null,
       "speed": 50,
-      "battery": 58
+      "battery": 90
     },
     {
       "id": 1,
       "name": "Rescuer-B2 (BLS)",
       "type": "BLS",
       "status": "Idle",
-      "currentNode": 1,
+      "currentNode": 5,
       "targetNode": null,
       "speed": 45,
-      "battery": 100
+      "battery": 92
     },
     {
       "id": 2,
       "name": "Rescuer-A3 (ALS)",
       "type": "ALS",
-      "status": "Idle",
-      "currentNode": 5,
-      "targetNode": null,
+      "status": "En-Route",
+      "currentNode": 3,
+      "targetNode": 3,
       "speed": 55,
-      "battery": 77
+      "battery": 85
     },
     {
       "id": 3,
       "name": "Rescuer-B4 (BLS)",
       "type": "BLS",
       "status": "Idle",
-      "currentNode": 6,
+      "currentNode": 5,
       "targetNode": null,
       "speed": 40,
-      "battery": 84
+      "battery": 68
     },
     {
       "id": 4,
       "name": "Rescuer-B5 (BLS)",
       "type": "BLS",
       "status": "Idle",
-      "currentNode": 0,
+      "currentNode": 5,
       "targetNode": null,
       "speed": 42,
-      "battery": 70
+      "battery": 62
     }
   ],
   "hospitals": [
@@ -167,7 +286,7 @@
       "name": "RVCE Medical Health Center",
       "nodeId": 0,
       "icuBedsMax": 10,
-      "icuBedsAvailable": 2,
+      "icuBedsAvailable": 8,
       "coordinates": {
         "x": 150,
         "y": 480
@@ -178,7 +297,7 @@
       "name": "Narayana Health HSR",
       "nodeId": 5,
       "icuBedsMax": 50,
-      "icuBedsAvailable": 11,
+      "icuBedsAvailable": 6,
       "coordinates": {
         "x": 580,
         "y": 480
@@ -200,7 +319,7 @@
       "name": "Columbia Asia Hebbal",
       "nodeId": 3,
       "icuBedsMax": 60,
-      "icuBedsAvailable": 15,
+      "icuBedsAvailable": 14,
       "coordinates": {
         "x": 500,
         "y": 100
@@ -229,29 +348,8 @@
       }
     }
   ],
-  "blockedEdges": [
-    {
-      "source": 0,
-      "target": 4
-    },
-    {
-      "source": 0,
-      "target": 6
-    },
-    {
-      "source": 0,
-      "target": 7
-    },
-    {
-      "source": 0,
-      "target": 9
-    }
-  ],
-  "trafficMultipliers": {
-    "0-6": 2.5,
-    "0-1": 3.5,
-    "1-8": 3.5
-  },
+  "blockedEdges": [],
+  "trafficMultipliers": {},
   "settings": {
     "trafficWeight": 1.5,
     "dispatchAlgorithm": "Hungarian",

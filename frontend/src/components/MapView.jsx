@@ -23,6 +23,8 @@ export default function MapView({
   const [hoveredNode, setHoveredNode] = useState(null);
   const [hoveredEdge, setHoveredEdge] = useState(null);
 
+  console.log("MAP PATH =", highlightPath);
+
   // Helper: check if road is blocked
   const isEdgeBlocked = (src, dest) => {
     return blockedEdges.some(b => 
@@ -48,16 +50,34 @@ export default function MapView({
 
   // Check if edge is part of the highlighted route (Dijkstra / TSP path)
   const isEdgeInHighlightPath = (src, dest) => {
-    if (!highlightPath || highlightPath.length < 2) return false;
-    for (let i = 0; i < highlightPath.length - 1; i++) {
-      const u = highlightPath[i];
-      const v = highlightPath[i + 1];
-      if ((u === src && v === dest) || (u === dest && v === src)) {
-        return true;
-      }
+  console.log(
+    "CHECKING",
+    src,
+    dest,
+    "PATH:",
+    highlightPath
+  );
+
+  if (!highlightPath || highlightPath.length < 2) return false;
+
+  for (let i = 0; i < highlightPath.length - 1; i++) {
+    const u = highlightPath[i];
+    const v = highlightPath[i + 1];
+
+    if ((u === src && v === dest) || (u === dest && v === src)) {
+
+      console.log(
+        "MATCH FOUND:",
+        src,
+        dest
+      );
+
+      return true;
     }
-    return false;
-  };
+  }
+
+  return false;
+};
 
   return (
     <div className="relative w-full h-[520px] bg-slate-950/80 rounded-2xl border border-slate-800/80 overflow-hidden grid-bg shadow-2xl">
@@ -321,9 +341,9 @@ export default function MapView({
           let borderSize = "2";
 
           if (isHospital) {
-            nodeColor = "#10b981"; // Hospital Green
+            nodeColor = "#00ff88"; // Hospital Green
             nodeRadius = "9";
-            borderStroke = "#047857";
+            borderStroke = "#ffffff";
             borderSize = "3";
           } else if (isActiveIncident) {
             nodeColor = "#ef4444"; // Emergency Red
@@ -374,7 +394,7 @@ export default function MapView({
               <text
                 x={node.x}
                 y={node.y - 12}
-                fill={isIsolated ? "#f59e0b" : (isHospital ? "#34d399" : (node.type === 'hub' ? "#22d3ee" : "#94a3b8"))}
+                fill={isIsolated ? "#f59e0b" : (isHospital ? "#ffffff" : (node.type === 'hub' ? "#22d3ee" : "#94a3b8"))}
                 fontSize="9"
                 fontWeight={isHospital || node.type === 'hub' ? "bold" : "normal"}
                 textAnchor="middle"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Activity, ShieldAlert, Navigation, Layers } from 'lucide-react';
 
-export default function LandingPage({ onEnter }) {
+export default function LandingPage({ onEnter, onCitizen }) {
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center grid-bg px-4 overflow-hidden">
       
@@ -27,14 +27,20 @@ export default function LandingPage({ onEnter }) {
 
         {/* Action Button */}
         <div className="pt-4">
-          <button 
-            onClick={onEnter}
-            className="group relative px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 font-semibold text-white tracking-wide uppercase transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)]"
-          >
-            Launch Terminal
-            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5 ml-2">→</span>
-          </button>
-        </div>
+  <button
+    onClick={onEnter}
+    className="group relative px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 font-semibold text-white tracking-wide uppercase"
+  >
+    Launch Terminal
+  </button>
+
+  <br />
+  <br />
+
+ <button onClick={onCitizen}>
+  Report Emergency
+</button>
+</div>
 
         {/* Live Counters / Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-12">
