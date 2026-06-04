@@ -39,7 +39,7 @@
     {
       "id": 1780379227733,
       "timestamp": "2026-06-02T05:47:07.729Z",
-      "status": "En-Route",
+      "status": "Resolved",
       "assignedAmbulanceId": 3,
       "assignedHospitalId": 1,
       "type": "Collapse",
@@ -60,12 +60,13 @@
         5
       ],
       "ambulanceDistance": 22,
-      "hospitalDistance": 15
+      "hospitalDistance": 15,
+      "responseTime": 109.5
     },
     {
       "id": 1780379232704,
       "timestamp": "2026-06-02T05:47:12.697Z",
-      "status": "En-Route",
+      "status": "Resolved",
       "assignedAmbulanceId": 4,
       "assignedHospitalId": 1,
       "type": "Collapse",
@@ -87,7 +88,144 @@
         5
       ],
       "ambulanceDistance": 21,
-      "hospitalDistance": 15
+      "hospitalDistance": 15,
+      "responseTime": 109.9
+    },
+    {
+      "id": 1780385454122,
+      "timestamp": "2026-06-02T07:30:54.111Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 3,
+      "assignedHospitalId": 1,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 9,
+      "name": "aliehjpw",
+      "phone": "20957",
+      "victims": "0",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 10,
+      "ambulanceRoute": [
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 15,
+      "hospitalDistance": 15,
+      "responseTime": 4.9
+    },
+    {
+      "id": 1780385462324,
+      "timestamp": "2026-06-02T07:31:02.316Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 4,
+      "assignedHospitalId": 1,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 9,
+      "name": "aliehjpw",
+      "phone": "20957",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 10,
+      "ambulanceRoute": [
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 15,
+      "hospitalDistance": 15,
+      "responseTime": 5.6
+    },
+    {
+      "id": 1780385464257,
+      "timestamp": "2026-06-02T07:31:04.250Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 0,
+      "assignedHospitalId": 1,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 9,
+      "name": "aliehjpw",
+      "phone": "20957",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "",
+      "priority": 10,
+      "ambulanceRoute": [
+        0,
+        8,
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 31,
+      "hospitalDistance": 15,
+      "responseTime": 6.3
+    },
+    {
+      "id": 1780385467502,
+      "timestamp": "2026-06-02T07:31:07.495Z",
+      "status": "Resolved",
+      "assignedAmbulanceId": 1,
+      "assignedHospitalId": 1,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 9,
+      "name": "aliehjpw",
+      "phone": "20957",
+      "victims": "2",
+      "location": "Airport Zone",
+      "notes": "swhrte",
+      "priority": 10,
+      "ambulanceRoute": [
+        1,
+        8,
+        5,
+        9
+      ],
+      "hospitalRoute": [
+        9,
+        5
+      ],
+      "ambulanceDistance": 29,
+      "hospitalDistance": 15,
+      "responseTime": 5.2
+    },
+    {
+      "id": 1780385949434,
+      "timestamp": "2026-06-02T07:39:09.428Z",
+      "status": "En-Route",
+      "assignedAmbulanceId": 2,
+      "assignedHospitalId": 3,
+      "type": "Medical",
+      "severity": "Critical",
+      "nodeId": 3,
+      "name": "fljset",
+      "phone": "9843",
+      "victims": "1",
+      "location": "Hebbal",
+      "notes": "quick",
+      "priority": 10,
+      "ambulanceRoute": [
+        3
+      ],
+      "hospitalRoute": [
+        3
+      ],
+      "ambulanceDistance": 0,
+      "hospitalDistance": 0
     }
   ],
   "ambulances": [
@@ -96,28 +234,28 @@
       "name": "Rescuer-A1 (ALS)",
       "type": "ALS",
       "status": "Idle",
-      "currentNode": 0,
+      "currentNode": 5,
       "targetNode": null,
       "speed": 50,
-      "battery": 98
+      "battery": 90
     },
     {
       "id": 1,
       "name": "Rescuer-B2 (BLS)",
       "type": "BLS",
       "status": "Idle",
-      "currentNode": 1,
+      "currentNode": 5,
       "targetNode": null,
       "speed": 45,
-      "battery": 100
+      "battery": 92
     },
     {
       "id": 2,
       "name": "Rescuer-A3 (ALS)",
       "type": "ALS",
-      "status": "Idle",
+      "status": "En-Route",
       "currentNode": 3,
-      "targetNode": null,
+      "targetNode": 3,
       "speed": 55,
       "battery": 85
     },
@@ -125,21 +263,21 @@
       "id": 3,
       "name": "Rescuer-B4 (BLS)",
       "type": "BLS",
-      "status": "En-Route",
-      "currentNode": 6,
-      "targetNode": 9,
+      "status": "Idle",
+      "currentNode": 5,
+      "targetNode": null,
       "speed": 40,
-      "battery": 84
+      "battery": 68
     },
     {
       "id": 4,
       "name": "Rescuer-B5 (BLS)",
       "type": "BLS",
-      "status": "En-Route",
-      "currentNode": 8,
-      "targetNode": 9,
+      "status": "Idle",
+      "currentNode": 5,
+      "targetNode": null,
       "speed": 42,
-      "battery": 78
+      "battery": 62
     }
   ],
   "hospitals": [
@@ -159,7 +297,7 @@
       "name": "Narayana Health HSR",
       "nodeId": 5,
       "icuBedsMax": 50,
-      "icuBedsAvailable": 10,
+      "icuBedsAvailable": 6,
       "coordinates": {
         "x": 580,
         "y": 480
@@ -181,7 +319,7 @@
       "name": "Columbia Asia Hebbal",
       "nodeId": 3,
       "icuBedsMax": 60,
-      "icuBedsAvailable": 15,
+      "icuBedsAvailable": 14,
       "coordinates": {
         "x": 500,
         "y": 100
